@@ -12,7 +12,7 @@ const Animated = () => {
           <div>un Commerce</div>
         </div>
         <div className={styles.third}>
-          <div>des parts d'entreprise</div>
+          <div>des parts d&apos; entreprise</div>
         </div>
       </section>
     </div>
