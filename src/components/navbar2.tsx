@@ -1,5 +1,5 @@
 import Animated from "@/components/UI/animated";
-import AjouterEntreprise from "@/components/forms/AjouterEntreprise";
+//import AjouterEntreprise from "@/components/forms/AjouterEntreprise";
 import AddCompany from "@/components/forms/addCompany";
 import { getSession } from "@auth0/nextjs-auth0";
 import Image from "next/image";
