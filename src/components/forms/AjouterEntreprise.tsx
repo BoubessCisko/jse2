@@ -22,14 +22,14 @@ export default function AjouterEntreprise() {
             placeholder="Id du user temporaire .."
           />
           <label className="mt-3 font-extrabold" htmlFor="name">
-            Nom de l'entreprise:
+            Nom de l&apos;entreprise:
           </label>
           <input
             type="text"
             id="name"
             name="name"
             className="w-full"
-            placeholder="Le nom du l'entreprise.."
+            placeholder="Le nom du l&apos;entreprise.."
           />
           <label className="mt-3 font-extrabold" htmlFor="description">
             Decrire votre entreprise:
@@ -38,7 +38,7 @@ export default function AjouterEntreprise() {
             id="description"
             name="description"
             className="w-full"
-            placeholder="Description complete du l'entreprise"
+            placeholder="Description complete du l&apos;entreprise"
           />
           <label className="mt-3 font-extrabold" htmlFor="location">
             Localite
@@ -61,7 +61,7 @@ export default function AjouterEntreprise() {
             placeholder="Le Prix demande .."
           />
           <label className="mt-3 font-extrabold" htmlFor="entrepriseType">
-            Statut de l'entreprise
+            Statut de l&apos;entreprise
           </label>
           <select
             id="entrepriseType"
@@ -114,7 +114,7 @@ export default function AjouterEntreprise() {
             id="nameContact"
             name="nameContact"
             className="w-full"
-            placeholder="Le Nom du Contact de L'entrepise .."
+            placeholder="Le Nom du Contact de L&apos;entrepise .."
           />
           <label className="mt-3 font-extrabold" htmlFor="emailContact">
             Email du Contact

@@ -42,13 +42,13 @@ const AddCompany = () => {
                       htmlFor="nomentreprise"
                       className="leading-7 text-sm text-gray-600"
                     >
-                      Nom de l'entreprise
+                      Nom de l&apos;entreprise
                     </label>
                     <input
                       required
                       type="text"
                       id="nomentrerpise"
-                      placeholder="Nom de l'entreprise"
+                      placeholder="Nom de l&apos;entreprise"
                       name="nomentrerpise"
                       className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     />
@@ -91,7 +91,7 @@ const AddCompany = () => {
                       htmlFor="entrpriseType"
                       className="leading-7 text-sm text-gray-600"
                     >
-                      Type d'entreprise
+                      Type d&apos;entreprise
                     </label>
                     <select
                       id="entrpriseType"

@@ -79,7 +79,7 @@ const FormCession = () => {
                       htmlFor="nom_entrprise"
                       className="leading-7 text-sm text-gray-600"
                     >
-                      Nom de L'entreprise
+                      Nom de L&apos;entreprise
                     </label>
                     <input
                       required
