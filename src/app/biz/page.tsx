@@ -1,5 +1,5 @@
 import Animated from "@/components/UI/animated";
-import AjouterEntreprise from "@/components/forms/AjouterEntreprise";
+//import AjouterEntreprise from "@/components/forms/AjouterEntreprise";
 import AddCompany from "@/components/forms/addCompany";
 import Image from "next/image";
 import Link from "next/link";
