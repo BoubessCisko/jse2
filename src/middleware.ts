@@ -1,9 +1,13 @@
-import { withMiddlewareAuthRequired } from "@auth0/nextjs-auth0/edge";
-
+import { authMiddleware } from "@clerk/nextjs";
+ 
+// This example protects all routes including api/trpc routes
+// Please edit this to allow other routes to be public as needed.
+// See https://clerk.com/docs/references/nextjs/auth-middleware for more information about configuring your Middleware
+export default authMiddleware({
+  publicRoutes: ["/","/reprise","/services","/partenrariat","/contact"],
+});
+ 
 export const config = {
-    matcher: [ "/reprise/:id*(\\w{1,})","/cession" ],
-       
-    //   '/((?!api|cession|reprise|_next/static|_next/image|favicon.ico|$).*)',
-    
-  };
-  export default withMiddlewareAuthRequired();
+  matcher: ['/((?!.+\\.[\\w]+$|_next).*)', '/', '/(api|trpc)(.*)'],
+};
+ 

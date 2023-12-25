@@ -1,15 +1,16 @@
 "use server";
 
 import prisma from "@/lib/db/prisma";
-import { getSession } from "@auth0/nextjs-auth0";
+import { currentUser , redirectToSignIn} from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 
 const AddCompanyAction = async (prevState: any, formData: FormData) => {
-  const session = await getSession();
-  const user = session?.user;
+  const user =  await currentUser();
+ 
+
 
   if (!user) {
-    redirect("/api/auth/login");
+    redirect("/sign-in");
   }
   try {
     const nomentrerpise = formData.get("nomentrerpise") as string;
@@ -21,7 +22,7 @@ const AddCompanyAction = async (prevState: any, formData: FormData) => {
     const emailContact = formData.get("emailContact") as string;
     const phoneContact = formData.get("phoneContact") as string;
     const price = Number(formData.get("price"));
-    const user_id = user.sub as string;
+    const user_id = user.id as string;
  
     await prisma.entreprise.create({
       data: {

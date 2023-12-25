@@ -1,12 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getSession } from "@auth0/nextjs-auth0";
+import { SignOutButton, currentUser } from '@clerk/nextjs';
 
 
 
 export default async function Navbar() {
-  const session = await getSession();
-  const user = session?.user;
+  const user = await currentUser();
  
   return (
     <div className=" sticky conatiner mx-auto">
@@ -67,7 +66,7 @@ export default async function Navbar() {
               <div className="w-10 rounded-full">
                 <Image
                   alt="user Picture"
-                  src={user?.picture? user.picture : "/user.png"}
+                  src={user?.imageUrl? user.imageUrl : "/user.png"}
                   width={40}
                   height={40}
                 />
@@ -87,13 +86,13 @@ export default async function Navbar() {
                 <a>Settings</a>
               </li>
               <li>
-                <a>Logout</a>
+              <SignOutButton>
               </li>
             </ul>
           </div>
           )} 
 
-         { ! user && ( <Link href={"/api/auth/login"}>
+         { ! user && ( <Link href={"/sign-in"}>
             <b className="p-2 bg-blue-800 text-white border-[1px] rounded-lg hover:p-4">
               se connecter
             </b>

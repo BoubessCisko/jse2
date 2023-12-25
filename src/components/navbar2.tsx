@@ -1,13 +1,13 @@
 import Animated from "@/components/UI/animated";
 //import AjouterEntreprise from "@/components/forms/AjouterEntreprise";
 import AddCompany from "@/components/forms/addCompany";
-import { getSession } from "@auth0/nextjs-auth0";
+import { SignOutButton, currentUser } from '@clerk/nextjs';
 import Image from "next/image";
 import Link from "next/link";
 
 export default async function Navbar2() {
-  const session = await getSession();
-  const user = session?.user;
+  const user = await currentUser();
+
   return (
     <div className="container  px-4 mx-auto  sticky top-0 z-10 bg-white h-[100px]   border-[1px] border-gray-500 ">
       <nav className="flex flex-row justify-between items-center ">
@@ -64,7 +64,7 @@ export default async function Navbar2() {
                 <div className="w-10 rounded-full">
                   <Image
                     alt="user Picture"
-                    src={user?.picture ? user.picture : "/user.png"}
+                    src={user?.imageUrl ? user.imageUrl : "/user.png"}
                     width={40}
                     height={40}
                   />
@@ -86,15 +86,15 @@ export default async function Navbar2() {
                   >Dashboard</Link>
                 </li>
                 <li>
-                  <Link
-                  href={"/api/auth/logout"}
-                  >Logout</Link>
+                   <SignOutButton>Logout</SignOutButton>
+                  
+                  
                 </li>
               </ul>
             </div>
           )}
           {!user && (
-            <Link href={"/api/auth/login"}>
+            <Link href={"/sign-in"}>
               <b className="inline-flex items-center gap-x-2.5 pt-4 px-4 text-md font-medium bg-white border border-gray-200 text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg sm:-ms-px sm:mt-0 sm:first:rounded-se-none sm:first:rounded-es-lg sm:last:rounded-es-none sm:last:rounded-se-lg hover:bg-slate-900 hover:border-gray-700 hover:text-white">
                 se connecter
               </b>

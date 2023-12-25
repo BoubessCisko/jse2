@@ -1,4 +1,4 @@
-import { UserProvider } from "@auth0/nextjs-auth0/client";
+import { ClerkProvider } from '@clerk/nextjs'
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
@@ -20,13 +20,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <UserProvider>
+      <ClerkProvider>
         <body className={montserrat.className}>
           <Navbar2 />
           {children}
           <Footer />
         </body>
-      </UserProvider>
+      </ClerkProvider>
     </html>
   );
 }

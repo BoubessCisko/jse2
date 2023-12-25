@@ -2,7 +2,7 @@ import Pagination from "@/components/UI/pagination";
 import Cardentreprise from "@/components/cardentreprise";
 import prisma from "@/lib/db/prisma";
 
-import withPageAuthRequired from "@auth0/nextjs-auth0";
+import { auth, currentUser } from "@clerk/nextjs";
 import { entreprise } from "@prisma/client";
 import Link from "next/link";
 
