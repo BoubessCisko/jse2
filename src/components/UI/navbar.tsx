@@ -86,7 +86,7 @@ export default async function Navbar() {
                 <a>Settings</a>
               </li>
               <li>
-              <SignOutButton>
+              <SignOutButton/>
               </li>
             </ul>
           </div>
