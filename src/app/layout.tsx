@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <ClerkProvider>
         <body className={montserrat.className}>
-          <Navbar2 />
+          <Navbar/>
           {children}
           <Footer />
         </body>
