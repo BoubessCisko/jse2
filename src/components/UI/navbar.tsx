@@ -129,9 +129,13 @@ export default async function Navbar() {
 
         {!user && (
           <Link href={"/sign-in"}>
-            <b className="p-2 bg-blue-800 text-white border-[1px] rounded-lg ">
+            <b className="p-2 bg-blue-800 text-white border-[1px] rounded-lg hidden md:block ">
               se connecter
             </b>
+            <b className="p-2 bg-blue-800 text-white border-[1px] rounded-lg sm:block md:hidden ">
+              C
+            </b>
+            
           </Link>
         )}
       </div>
